@@ -1,5 +1,5 @@
 class StockInfo:
-    def __init__(self, code_name, amount, price):
+    def __init__(self, code_name, price, amount):
         self.code_name = code_name
         self.amount = amount
         self.price = price
