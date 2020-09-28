@@ -1,4 +1,4 @@
-import os, csv
+import csv
 
 
 class InsertInfo:
