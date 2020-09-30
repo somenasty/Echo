@@ -22,5 +22,5 @@ class StockInfo:
               "price", self.price, "total", self.total)
 
     def transfer_to_list(self):
-        single_stock = [self.datetime, self.code_name, self.amount, self.price, self.total]
+        single_stock = [self.datetime, self.code_name, self.price, self.amount, self.total]
         return single_stock
