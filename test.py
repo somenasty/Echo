@@ -34,18 +34,35 @@ while flag != 1:
         except Exception as e:
             print("Error Message:", e)
     elif get_choice == '2':
+        cost_list = []
+        cost_amount_list = []
+        cost_sum = 0
+        cost_amount_sum = 0
+        get_second_choice = input("1.成本 2.明细\n")
         get_code_name = input("股票名称\n")
         result = QueryInfo.get_info_from_csv(get_code_name, csv_file_name)
-        for item in result:
-            print(item)
+        if get_second_choice == '1':
+            for item in result:
+                if float(item[4]) < 0:
+                    cost_list.append(float(item[4]))
+                    cost_amount_list.append(float(item[3]))
+            for cost in cost_list:
+                cost_sum = cost_sum + cost
+            for amount in cost_amount_list:
+                cost_amount_sum = cost_amount_sum + amount
+            print("成本价格:")
+            print(round((cost_sum/cost_amount_sum), 2))
+        elif get_second_choice == '2':
+            for row in result:
+                print(row)
+        else:
+            print("error")
     elif get_choice == '3':
-        cost_list = []
-        profit_list =[]
         get_code_name = input("股票名称\n")
         result = QueryInfo.get_info_from_csv(get_code_name, csv_file_name)
         # print(result)
         get_profit_info = GetProfit.count_profit(csv_file_name, result)
-        print("your profit is:")
+        print("获得利润:")
         print(get_profit_info)
     elif get_choice == '4':
         flag = 1
