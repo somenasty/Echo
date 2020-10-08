@@ -82,6 +82,7 @@ def query_cost(e4, text):
     text.insert(END, chars=e4.get())
     text.insert(END, chars='  成本价格:  ')
     text.insert(END, chars=cost_info)
+    text.insert(END, chars="\n")
 
 
 def query_detail(e4, text):
