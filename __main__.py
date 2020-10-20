@@ -7,7 +7,13 @@ from GetProfit import GetProfit
 from QueryInfo import QueryInfo
 
 csv_file_name = "test.csv"
+file_flag = 0
 headers = ["日期", "股票名称", "股票价格", "股票数量", "股票总价"]
+get_path = os.getcwd()
+get_dir_list = os.listdir(get_path)
+file_flag = get_dir_list.count(csv_file_name)
+if file_flag == 0:
+    file = open(get_path+r'\\'+csv_file_name, "w", newline="")
 
 
 def submitted(e1, e2, e3, var, txt):
