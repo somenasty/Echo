@@ -12,7 +12,7 @@ class featuretest(tk.Frame):
     headers_flag = True
 
     while flag != 1:
-        with open(csv_file_name, "r", newline="")as f1:
+        with open(csv_file_name, "r", newline="", encoding='utf-8-sig')as f1:
             read_csv = csv.reader(f1)
             headers_flag = [x for x in read_csv]
             if len(headers_flag) == 0:

@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import os
 
 from FuncInsertInfo import FuncInsertInfo
 from GetProfit import GetProfit
